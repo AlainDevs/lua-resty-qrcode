@@ -49,6 +49,7 @@ Generates a PNG image of a QR code using the GD graphics library.
 
 ```lua
 local ffi_qrencode = require("ffi_qrencode")
+local base_encoding = require("resty.base_encoding")
 
 -- Generate an SVG QR code
 local svg_qr = ffi_qrencode.generate_qr_code_svg("This is a test", 2)
