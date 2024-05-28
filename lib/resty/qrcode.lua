@@ -8,7 +8,7 @@ local base_encoding = require("resty.base_encoding")
 local insert = table.insert
 local concat = table.concat
 local format = string.format
--- Define the functions and types you need from the library
+-- Define the functions
 ffi.cdef[[
   typedef enum {
     QR_MODE_NUL = -1,
@@ -41,7 +41,7 @@ QRcode *QRcode_encodeString8bit(const char *string, int version, QRecLevel level
 void QRcode_free(QRcode *qrcode);
 
 
-/*please continue cairo cdef*/
+/*cairo cdef*/
 typedef enum _cairo_status {
     CAIRO_STATUS_SUCCESS = 0,
     CAIRO_STATUS_NO_MEMORY,
