@@ -121,6 +121,19 @@ cairo_status_t cairo_surface_write_to_png_stream (cairo_surface_t *surface,
 							void *closure);
 void cairo_surface_destroy (cairo_surface_t *surface);
 cairo_status_t cairo_surface_status (cairo_surface_t *surface);
+
+/* gd lib */
+
+typedef struct gdImageStruct gdImage;
+typedef unsigned char gdImagePtr;
+
+gdImage *gdImageCreateTrueColor(int sx, int sy);
+void gdImageFilledRectangle(gdImage *im, int x1, int y1, int x2, int y2, int color);
+int gdImageColorAllocate(gdImage *im, int r, int g, int b);
+void gdImageDestroy(gdImage *im);
+gdImagePtr *gdImageBmpPtr(gdImage *im, int *size, int compression);
+gdImagePtr *gdImagePngPtr(gdImage *im, int *size);
+void gdFree(void *m);
 ]]
 
 -- Load the library
